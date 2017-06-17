@@ -12,7 +12,6 @@ $ mvn install
 
 This will allow the plugin to be installed locally.
 
-```
 
 **Goal Overview**
 -
