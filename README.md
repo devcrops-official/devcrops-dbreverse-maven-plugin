@@ -21,14 +21,14 @@ $ mvn devcrops-dbreverse:reverse-db
 ```
 Goal to recover all DDLs of a DB.
 
-| Parametro      | Obbligatorio | Default |Descrizione                                                                                                                          |
+| Parametro      | Required | Default | Description                                                                                                                          |
 |----------------|--------------|---------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **dbConnection** | *SI*  | - | Url del db con il quale ci si vuole connettere |
-| **dbDriver** | *SI*  | - | Driver del db con il quale si vuole interagire |
-| **dbSchema** | *SI*  | - | Schema del db al quale si vuole fare riferimento |
-| **dbUser** | *SI*  | - | Username utenza db |
-| **dbPassword** | *SI*  | - | Password utenza db |
-| **dbOutputDirectory** | *NO*  | src/main/resources |La directory target sul quale verranno scritti i DDL ottenuti dal DB|
-| **gitPush** | *NO*  | false | Abilita il push automatico del contenuto della outputDirectory sul git del progetto |
-| **gitPushMessage** | *NO*  | Commit modifiche DDL oggetti DB | Testo del messaggio di commit |
+| **dbConnection** | *YES*  | - | The jdbc url to use to connect to the database |
+| **dbDriver** | *YES*  | - | The fully qualified classname of the jdbc driver to use to connect to the database |
+| **dbSchema** | *YES*  | - | The schema of the db. |
+| **dbUser** | *YES*  | - | The user to use to connect to the database |
+| **dbPassword** | *YES*  | - | The password to use to connect to the database |
+| **dbOutputDirectory** | *NO*  | schema_name | The output directory where the DDLs script will be written |
+| **gitPush** | *NO*  | false | If you are inside a git repository you can Push automatically. |
+| **gitPushMessage** | *NO*  | Commit modifiche DDL oggetti DB | Commit Message |
 
