@@ -56,7 +56,7 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <goalPrefix>devops-data-dbreverse</goalPrefix>
+                    <goalPrefix>devcrops-dbreverse</goalPrefix>
                 </configuration>
                 <executions>
                     <execution>

@@ -15,9 +15,9 @@ This will allow the plugin to be installed locally.
 
 **Goal Overview**
 -
-### **devops-data-dbreverse:reverse-db**
+### **devcrops-dbreverse:reverse-db**
 ```bash
-$ mvn devops-data-dbreverse:reverse-db
+$ mvn devcrops-dbreverse:reverse-db
 ```
 Goal to recover all DDLs of a DB.
 
