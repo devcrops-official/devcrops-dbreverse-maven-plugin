@@ -1,0 +1,43 @@
+DROP TABLE IF EXISTS DBA_OBJECTS;
+
+CREATE TABLE DBA_OBJECTS (
+OBJECT_TYPE VARCHAR(100),
+OBJECT_NAME VARCHAR(100),
+OWNER VARCHAR(100)
+);
+
+Insert into DBA_OBJECTS (OBJECT_TYPE,OBJECT_NAME,OWNER) values ('TABLE','schema_version', 'sa');
+Insert into DBA_OBJECTS (OBJECT_TYPE,OBJECT_NAME,OWNER) values ('INDEX','schema_version_pk','sa');
+Insert into DBA_OBJECTS (OBJECT_TYPE,OBJECT_NAME,OWNER) values ('INDEX','schema_version_s_idx', 'sa');
+
+DROP ALIAS IF EXISTS REGEXP_LIKE;
+CREATE ALIAS REGEXP_LIKE AS $$
+ Boolean regexp(String object_type, String regexp) throws Exception {
+    return false;
+ } $$;
+
+DROP ALIAS IF EXISTS GET_DDL;
+
+CREATE ALIAS GET_DDL AS $$
+String getDdl(String object_type, String object_name, String object_schema) throws SQLException {
+
+if("sa".equals(object_schema)){
+        if ("INDEX".equals(object_type)){
+            if ("schema_version_s_idx".equals(object_name)) {
+                return "CREATE INDEX \"FLYWAY\".\"schema_version_s_idx\" ON \"FLYWAY\".\"schema_version\" (\"success\")  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)  TABLESPACE \"SYSTEM\"";
+            }
+            if ("schema_version_pk".equals(object_name)) {
+                return "CREATE UNIQUE INDEX \"FLYWAY\".\"schema_version_pk\" ON \"FLYWAY\".\"schema_version\" (\"installed_rank\")  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)  TABLESPACE \"SYSTEM\"";
+            }
+        }
+        if ("TABLE".equals(object_type)){
+            if ("schema_version".equals(object_name)) {
+                return "CREATE TABLE \"FLYWAY\".\"schema_version\"   (	\"installed_rank\" NUMBER(*,0) NOT NULL ENABLE,	\"version\" VARCHAR2(50),	\"description\" VARCHAR2(200) NOT NULL ENABLE,	\"type\" VARCHAR2(20) NOT NULL ENABLE,	\"script\" VARCHAR2(1000) NOT NULL ENABLE,	\"checksum\" NUMBER(*,0),	\"installed_by\" VARCHAR2(100) NOT NULL ENABLE,	\"installed_on\" TIMESTAMP (6) DEFAULT CURRENT_TIMESTAMP NOT NULL ENABLE,	\"execution_time\" NUMBER(*,0) NOT NULL ENABLE,	\"success\" NUMBER(1,0) NOT NULL ENABLE,	 CONSTRAINT \"schema_version_pk\" PRIMARY KEY (\"installed_rank\")  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)  TABLESPACE \"SYSTEM\"  ENABLE   ) SEGMENT CREATION IMMEDIATE  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)  TABLESPACE \"SYSTEM\"";            
+            }
+        }
+    }
+    
+throw new SQLException("Object not found");
+
+}
+$$;

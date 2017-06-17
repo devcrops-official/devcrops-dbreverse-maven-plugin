@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>it.bmed.tmp</groupId>
+    <artifactId>dbreverse-integration-test</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <db.h2.url>${project.build.directory}/db/dbh2</db.h2.url>
+    </properties>
+    <build>
+        <directory>${project.basedir}/../../../../target/integration-test</directory>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.0</version>
+                <configuration>
+                    <url>jdbc:h2:file:${db.h2.url}</url>
+                    <user>sa</user>
+                    <locations>
+                        <location>filesystem:sql/</location>
+                    </locations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>create-db</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.192</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>it.bmed.arch.plugins</groupId>
+                <artifactId>devops-data-dbreverse-maven-plugin</artifactId>
+                <version>${plugin.version}</version>
+                <configuration>
+                    <dbConnection>jdbc:h2:file:${db.h2.url}</dbConnection>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>reverse-db</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>reverse-db</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.192</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
