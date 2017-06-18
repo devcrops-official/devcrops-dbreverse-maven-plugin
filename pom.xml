@@ -32,6 +32,14 @@
         <project.build.targetJdk>1.7</project.build.targetJdk>
     </properties>
 
+    <repositories>
+        <repository>
+          <id>datanucleus</id>
+          <name>Datanucleus Repository</name>
+          <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </repository>
+    </repositories>
+  
     <build>
         <extensions>
             <extension>
@@ -173,11 +181,11 @@
             <version>1.10</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
         <dependency>
-            <groupId>com.oracle</groupId>
+            <groupId>oracle</groupId>
             <artifactId>ojdbc6</artifactId>
-            <version>11.2.0.3.0</version>
-            <scope>test</scope>
+            <version>11.2.0.3</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
