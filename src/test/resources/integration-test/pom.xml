@@ -43,8 +43,8 @@
                 </dependencies>
             </plugin>
             <plugin>
-                <groupId>it.bmed.arch.plugins</groupId>
-                <artifactId>devops-data-dbreverse-maven-plugin</artifactId>
+                <groupId>it.devcrops.plugins</groupId>
+                <artifactId>devcrops-dbreverse-maven-plugin</artifactId>
                 <version>${plugin.version}</version>
                 <configuration>
                     <dbConnection>jdbc:h2:file:${db.h2.url}</dbConnection>
