@@ -1,4 +1,4 @@
-package it.bmed.arch.plugins.test;
+package it.devcrops.plugins.dbreverse.test;
 
 import java.io.File;
 import java.io.FileInputStream;

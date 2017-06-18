@@ -1,6 +1,6 @@
-package it.bmed.arch.plugins.db.mapper;
+package it.devcrops.plugins.dbreverse.db.mapper;
 
-import it.bmed.arch.plugins.model.OggettoDB;
+import it.devcrops.plugins.dbreverse.model.OggettoDB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

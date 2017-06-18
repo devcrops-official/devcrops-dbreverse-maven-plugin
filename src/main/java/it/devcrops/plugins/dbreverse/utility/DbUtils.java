@@ -1,12 +1,12 @@
-package it.bmed.arch.plugins.utility;
+package it.devcrops.plugins.dbreverse.utility;
 
-import it.bmed.arch.plugin.exception.DbReversePluginBusinessException;
-import it.bmed.arch.plugin.exception.DbReversePluginSystemException;
-import it.bmed.arch.plugins.model.OggettoDB;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginBusinessException;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException;
+import it.devcrops.plugins.dbreverse.model.OggettoDB;
 
 import java.sql.*;
 import java.util.ArrayList;
-import it.bmed.arch.plugins.db.mapper.RowMapper;
+import it.devcrops.plugins.dbreverse.db.mapper.RowMapper;
 import java.text.MessageFormat;
 import org.apache.log4j.Logger;
 

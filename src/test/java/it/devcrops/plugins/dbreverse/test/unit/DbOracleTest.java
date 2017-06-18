@@ -1,11 +1,11 @@
-package it.bmed.arch.plugins.test.unit;
+package it.devcrops.plugins.dbreverse.test.unit;
 
-import it.bmed.arch.plugin.exception.DbReversePluginBusinessException;
-import it.bmed.arch.plugin.exception.DbReversePluginSystemException;
-import it.bmed.arch.plugins.db.DatabaseOracle;
-import it.bmed.arch.plugins.model.OggettoDB;
-import it.bmed.arch.plugins.test.AbstractTest;
-import it.bmed.arch.plugins.utility.DbUtils;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginBusinessException;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException;
+import it.devcrops.plugins.dbreverse.db.DatabaseOracle;
+import it.devcrops.plugins.dbreverse.model.OggettoDB;
+import it.devcrops.plugins.dbreverse.test.AbstractTest;
+import it.devcrops.plugins.dbreverse.utility.DbUtils;
 import org.apache.log4j.Logger;
 import org.h2.jdbc.JdbcSQLException;
 import org.hibernate.engine.jdbc.internal.DDLFormatterImpl;

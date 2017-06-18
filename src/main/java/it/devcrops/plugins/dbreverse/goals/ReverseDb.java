@@ -1,13 +1,13 @@
-package it.bmed.arch.plugins.goals;
+package it.devcrops.plugins.dbreverse.goals;
 
-import it.bmed.arch.plugin.exception.DbReversePluginBusinessException;
-import it.bmed.arch.plugin.exception.DbReversePluginSystemException;
-import it.bmed.arch.plugins.db.Database;
-import it.bmed.arch.plugins.db.DatabaseOracle;
-import it.bmed.arch.plugins.model.OggettoDB;
-import it.bmed.arch.plugins.utility.DbUtils;
-import it.bmed.arch.plugins.utility.GitUtils;
-import it.bmed.arch.plugins.utility.WriterUtils;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginBusinessException;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException;
+import it.devcrops.plugins.dbreverse.db.Database;
+import it.devcrops.plugins.dbreverse.db.DatabaseOracle;
+import it.devcrops.plugins.dbreverse.model.OggettoDB;
+import it.devcrops.plugins.dbreverse.utility.DbUtils;
+import it.devcrops.plugins.dbreverse.utility.GitUtils;
+import it.devcrops.plugins.dbreverse.utility.WriterUtils;
 import java.text.MessageFormat;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;

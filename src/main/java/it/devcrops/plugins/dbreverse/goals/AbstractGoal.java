@@ -1,4 +1,4 @@
-package it.bmed.arch.plugins.goals;
+package it.devcrops.plugins.dbreverse.goals;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.Parameter;

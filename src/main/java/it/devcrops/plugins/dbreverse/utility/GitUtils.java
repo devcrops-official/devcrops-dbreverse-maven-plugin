@@ -1,6 +1,6 @@
-package it.bmed.arch.plugins.utility;
+package it.devcrops.plugins.dbreverse.utility;
 
-import it.bmed.arch.plugin.exception.DbReversePluginSystemException;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException;
 import org.apache.log4j.Logger;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -40,7 +40,7 @@ public class GitUtils {
      * @param outputDirectory property directory root nella quale inserire gli
      *            oggetti ottenuti dal db
      * @param gitPushMessage property messaggio di commit
-     * @throws it.bmed.arch.plugin.exception.DbReversePluginSystemException
+     * @throws it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException
      */
     public static void gitPush(String outputDirectory, String gitPushMessage) throws DbReversePluginSystemException {
 

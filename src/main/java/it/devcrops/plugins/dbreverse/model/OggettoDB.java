@@ -1,4 +1,4 @@
-package it.bmed.arch.plugins.model;
+package it.devcrops.plugins.dbreverse.model;
 
 /**
  * Created by davide on 27/09/16.

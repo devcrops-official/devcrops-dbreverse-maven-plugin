@@ -1,4 +1,4 @@
-package it.bmed.arch.plugin.exception;
+package it.devcrops.plugins.dbreverse.exception;
 
 /**
  * @author giacomo

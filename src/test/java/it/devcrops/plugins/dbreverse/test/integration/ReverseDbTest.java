@@ -1,6 +1,6 @@
-package it.bmed.arch.plugins.test.integration;
+package it.devcrops.plugins.dbreverse.test.integration;
 
-import it.bmed.arch.plugins.test.AbstractTest;
+import it.devcrops.plugins.dbreverse.test.AbstractTest;
 import org.apache.log4j.Logger;
 import org.apache.maven.shared.invoker.*;
 import org.junit.*;

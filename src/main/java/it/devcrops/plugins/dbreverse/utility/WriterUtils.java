@@ -1,7 +1,7 @@
-package it.bmed.arch.plugins.utility;
+package it.devcrops.plugins.dbreverse.utility;
 
-import it.bmed.arch.plugin.exception.DbReversePluginSystemException;
-import it.bmed.arch.plugins.model.OggettoDB;
+import it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException;
+import it.devcrops.plugins.dbreverse.model.OggettoDB;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class WriterUtils {
      * 
      * @param outputDirectory
      * @param oggettoDB
-     * @throws it.bmed.arch.plugin.exception.DbReversePluginSystemException
+     * @throws it.devcrops.plugins.dbreverse.exception.DbReversePluginSystemException
      */
     public static void writeDDLOggettoDB(String outputDirectory, OggettoDB oggettoDB) throws DbReversePluginSystemException {
 
